@@ -5,8 +5,7 @@
 import axios from "axios";
 
 const BASE_URL = "https://api.lifx.com/v1/lights/";
-const token =
-  "c72c9f84dd1932cbfaf3a6ea69f25653b4ce6d9c31963d14351072dba806f875";
+const token = process.env.REACT_APP_LIFX_TOKEN;
 
 // returns object with all lights and data
 
