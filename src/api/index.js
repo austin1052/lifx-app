@@ -1,15 +1,11 @@
-// axios/api functions here
-
-// GET all lights. Using ID and name
-
 import axios from "axios";
-
 const BASE_URL = "https://api.lifx.com/v1/lights/";
 const token = process.env.REACT_APP_LIFX_TOKEN;
 
 // returns object with all lights and data
 
 export const getAllLights = async () => {
+  console.log(token);
   try {
     const { data: lights } = await axios.get(`${BASE_URL}`, {
       headers: {
@@ -23,7 +19,7 @@ export const getAllLights = async () => {
   }
 };
 
-export const updateLight = async ({ id, colors }) => {
+export const updateLight = async (id, colors) => {
   try {
     const response = await axios.put(
       `${BASE_URL}/${id}/state`,
